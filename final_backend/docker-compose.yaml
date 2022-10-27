@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: always
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=password
+    ports:
+      - 5555:80
+    networks:
+      - main_network
+
+networks:
+  main_network:
+    driver: bridge
